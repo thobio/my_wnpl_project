@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_wnpl_project/app/data/providers/api_provider.dart';
+import 'package:my_wnpl_project/app/routes/app_pages.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
@@ -37,6 +38,14 @@ class LoginController extends GetxController {
     }
   }
 
+  String? validatePhoneNumber(String value) {
+    if (GetUtils.isNumericOnly(value) || GetUtils.isLengthEqualTo(value, 6)) {
+      return "Provide Valid Phone Number";
+    } else {
+      return null;
+    }
+  }
+
   void checkLogin() async {
     final isValid = loginFormKey.currentState?.validate();
     if (!isValid!) {
@@ -48,6 +57,7 @@ class LoginController extends GetxController {
       if (loginJson.data.operatorId.isNotEmpty) {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("operatorId", loginJson.data.operatorId);
+        Get.offNamed(AppPages.DASH);
       }
     }
   }

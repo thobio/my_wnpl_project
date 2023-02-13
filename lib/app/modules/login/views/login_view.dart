@@ -61,6 +61,8 @@ class LoginView extends GetView<LoginController> {
                     onSaved: (value) {
                       controller.password = value!;
                     },
+                    validator: (value) =>
+                        controller.validatePhoneNumber(value!),
                   ),
                   const SizedBox(
                     height: 20,

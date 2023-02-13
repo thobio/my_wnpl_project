@@ -20,11 +20,17 @@ class RequestListView extends GetView<RequestListController> {
         backgroundColor: Colors.transparent,
       ),
       body: ListView.builder(
-          itemCount: 5,
+          itemCount: controller.requestList?.data.requests.length ?? 0,
           itemBuilder: (context, int index) {
             return ListTile(
-                leading: const Icon(Icons.add),
-                title: Text("List item $index"));
+              trailing: const Icon(Icons.arrow_right),
+              title: Text(
+                controller.requestList!.data.requests[index].prospectName,
+              ),
+              subtitle: Text(
+                controller.requestList!.data.requests[index].prospectMessage,
+              ),
+            );
           }),
     );
   }
