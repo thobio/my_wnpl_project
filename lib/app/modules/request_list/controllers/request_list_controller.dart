@@ -8,17 +8,15 @@ class RequestListController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    print("object1");
     getRequestList();
   }
 
   @override
   void onReady() {
     super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
+    print("object");
+    getRequestList();
   }
 
   void getRequestList() async {

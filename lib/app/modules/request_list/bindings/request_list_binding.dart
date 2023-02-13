@@ -1,12 +1,12 @@
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
-import '../controllers/request_list_controller.dart';
+// import '../controllers/request_list_controller.dart';
 
-class RequestListBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<RequestListController>(
-      () => RequestListController(),
-    );
-  }
-}
+// class RequestListBinding extends Bindings {
+//   @override
+//   void dependencies() {
+//     Get.lazyPut<RequestListController>(
+//       () => RequestListController(),
+//     );
+//   }
+// }

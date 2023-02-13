@@ -19,7 +19,6 @@ class AppProvider {
       final respStr = await response.stream.bytesToString();
       return loginFromJson(respStr);
     } else {
-      print(response.statusCode);
       return null;
     }
   }
@@ -38,7 +37,6 @@ class AppProvider {
       final respStr = await response.stream.bytesToString();
       return requestListFromJson(respStr);
     } else {
-      print(response.statusCode);
       return null;
     }
   }

@@ -15,7 +15,6 @@ class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.LOGIN;
-  static const DASH = Routes.DASHBOARD;
 
   static final routes = [
     GetPage(
@@ -27,16 +26,6 @@ class AppPages {
       name: _Paths.DASHBOARD,
       page: () => const DashboardView(),
       binding: DashboardBinding(),
-    ),
-    GetPage(
-      name: _Paths.REQUEST_LIST,
-      page: () => const RequestListView(),
-      binding: RequestListBinding(),
-    ),
-    GetPage(
-      name: _Paths.TALK_LIST,
-      page: () => const TalkListView(),
-      binding: TalkListBinding(),
     ),
   ];
 }

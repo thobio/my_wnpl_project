@@ -12,8 +12,9 @@ void main() async {
   runApp(
     GetMaterialApp(
       title: "Application",
-      initialRoute: operatorId == null ? AppPages.INITIAL : AppPages.DASH,
+      initialRoute: operatorId == null ? AppPages.INITIAL : Routes.DASHBOARD,
       getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
     ),
   );
 }

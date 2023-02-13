@@ -19,11 +19,6 @@ class LoginController extends GetxController {
   }
 
   @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
   void onClose() {
     super.onClose();
     emailController.dispose();
@@ -57,7 +52,7 @@ class LoginController extends GetxController {
       if (loginJson.data.operatorId.isNotEmpty) {
         SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("operatorId", loginJson.data.operatorId);
-        Get.offNamed(AppPages.DASH);
+        Get.offNamed(Routes.DASHBOARD);
       }
     }
   }
